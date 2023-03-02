@@ -1,0 +1,18 @@
+name: Deployment
+on:
+  workflow_dispatch:
+jobs:
+  datadog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Delete Service Definition
+        run: |
+          # Path parameters
+          export service_name="my-service"
+          # Curl command
+          curl -X DELETE "https://api.datadoghq.com/api/v2/services/definitions/featureflagsservice" \
+          -H "Accept: application/json" \
+          -H "DD-API-KEY: ${DD_API_KEY}" \
+          -H "DD-APPLICATION-KEY: ${DD_APP_KEY}"

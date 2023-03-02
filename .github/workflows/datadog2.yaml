@@ -9,7 +9,8 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v3
-      - uses: arcxp/datadog-service-catalog-metadata-provider@v1
+      - name: Service Definition
+      - uses: arcxp/datadog-service-catalog-metadata-provider@v2
         with:
           datadog-hostname: api.us5.datadoghq.com
           datadog-key: ${{ secrets.DATADOG_API_KEY }}

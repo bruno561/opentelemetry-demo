@@ -1,0 +1,20 @@
+schema-version: v2
+dd-service: featureflagsservice
+team: featureflag squad
+dd-team: featureflag squad
+links:
+  - name: Grafana Prod
+    type: dashboard
+    url: https://grafana.com/
+contacts:
+  - type: slack
+    contact: http://avenuesec.slack.com/
+tags: 
+  - db:mysql
+repos:
+  - name: Feature Flag
+    provider: Github
+    url: https://github.com/
+  - name: Helm Charts
+    provider: Github
+    url: https://github.com/

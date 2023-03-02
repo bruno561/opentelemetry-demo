@@ -11,11 +11,14 @@ jobs:
         uses: actions/checkout@v3
       - name: Service Definition
         uses: arcxp/datadog-service-catalog-metadata-provider@v1.0.4
+        strategy:
+          matrix:
+            service: [hello-world1, hello-world2]
         with:
           datadog-hostname: api.us5.datadoghq.com
           datadog-key: ${{ secrets.DATADOG_API_KEY }}
           datadog-app-key: ${{ secrets.DATADOG_APPLICATION_KEY }}
-          service-name: hello-world
+          service-name: ${{ matrix.service }}
           team: Global Greetings
           email: global.greetings@fake-email-host.com
           slack-support-channel: 'https://team-name-here.slack.com/archives/ABC123'

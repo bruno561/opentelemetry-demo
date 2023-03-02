@@ -10,6 +10,11 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v3
+      # - name: Datadog Service Spec
+      #   uses: bruno561/actions/datadog_service@main
+      #   with:
+      #     dd_api_key: ${{ secrets.DD_API_KEY }}
+      #     dd_application_key: ${{ secrets.DD_APPLICATION_KEY }}
       - name: Delete Service Definition
         run: |
           # Path parameters
@@ -18,4 +23,4 @@ jobs:
           curl -X DELETE "https://api.datadoghq.com/api/v2/services/definitions/featureflagsservice" \
           -H "Accept: application/json" \
           -H "DD-API-KEY: ${DD_API_KEY}" \
-          -H "DD-APPLICATION-KEY: ${DD_APP_KEY}"
+          -H "DD-APPLICATION-KEY: ${DD_APPLICATION_KEY}"

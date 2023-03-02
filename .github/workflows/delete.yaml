@@ -10,11 +10,11 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v3
-      # - name: Datadog Service Spec
-      #   uses: bruno561/actions/datadog_service@main
-      #   with:
-      #     dd_api_key: ${{ secrets.DD_API_KEY }}
-      #     dd_application_key: ${{ secrets.DD_APPLICATION_KEY }}
+      - name: Datadog Service Spec
+        uses: bruno561/actions/datadog_service@main
+        with:
+          dd_api_key: ${{ secrets.DD_API_KEY }}
+          dd_application_key: ${{ secrets.DD_APPLICATION_KEY }}
       - name: Delete Service Definition
         run: |
           # Path parameters

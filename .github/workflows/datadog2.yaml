@@ -1,0 +1,32 @@
+name: Create Service Definition Datadog
+on:
+  push:
+    branches:
+      - "dev"
+jobs:
+  datadog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - uses: arcxp/datadog-service-catalog-metadata-provider@v1
+        with:
+          datadog-hostname: api.us5.datadoghq.com
+          datadog-key: ${{ secrets.DATADOG_API_KEY }}
+          datadog-app-key: ${{ secrets.DATADOG_APPLICATION_KEY }}
+          service-name: ${{ matrix.service }}
+          team: Global Greetings
+          email: global.greetings@fake-email-host.com
+          slack-support-channel: 'https://team-name-here.slack.com/archives/ABC123'
+          repos: |
+            - name: hello-world
+              url: https://github.com/fake-org/hello-world
+              provider: github
+          docs: |
+            - name: outage-runbook
+              url: https://fake-org.github.io/hello-world-outage-runbook
+              provider: github
+          integrations: |
+            opsgenie:
+              service_url: https://fake-org.hello-world.opsgenie.com
+              region: US

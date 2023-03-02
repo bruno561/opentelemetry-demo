@@ -20,7 +20,7 @@ jobs:
           # Path parameters
           export service_name="featureflagsservice"
           # Curl command
-          curl -X DELETE "https://api.datadoghq.com/api/v2/services/definitions/featureflagsservice" \
+          curl -X DELETE "https://us5.datadoghq.com/api/v2/services/definitions/featureflagsservice" \
           -H "Accept: application/json" \
           -H "DD-API-KEY: ${DD_API_KEY}" \
           -H "DD-APPLICATION-KEY: ${DD_APPLICATION_KEY}"

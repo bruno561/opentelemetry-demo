@@ -3,7 +3,7 @@ dd-service: featureflagservice
 team: featureflag squad
 dd-team: featureflag squad
 links:
-  - name: Grafana Prod
+  - name: Grafana Dev
     type: dashboard
     url: https://grafana.com/
 contacts:

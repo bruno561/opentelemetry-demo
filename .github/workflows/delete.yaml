@@ -1,5 +1,8 @@
-name: Deployment
+name: Delete Service Definition
 on:
+  push:
+    branches:
+      - "dev"
   workflow_dispatch:
 jobs:
   datadog:
@@ -10,7 +13,7 @@ jobs:
       - name: Delete Service Definition
         run: |
           # Path parameters
-          export service_name="my-service"
+          export service_name="featureflagsservice"
           # Curl command
           curl -X DELETE "https://api.datadoghq.com/api/v2/services/definitions/featureflagsservice" \
           -H "Accept: application/json" \

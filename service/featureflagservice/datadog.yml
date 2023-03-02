@@ -1,5 +1,5 @@
 schema-version: v2
-dd-service: featureflagsservice
+dd-service: featureflagservice
 team: featureflag squad
 dd-team: featureflag squad
 links:

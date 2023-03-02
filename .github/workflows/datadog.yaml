@@ -7,6 +7,8 @@ jobs:
   datadog:
     runs-on: ubuntu-latest
     steps:
+      - name: Get code
+        uses: actions/checkout@v3
       - name: Datadog Service Spec
         uses: bruno561/actions/datadog_service@main
         with:

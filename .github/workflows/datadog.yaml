@@ -10,6 +10,6 @@ jobs:
       - name: Datadog Service Spec
         uses: bruno561/actions/datadog_service@main
         with:
-          spec_file: src/${{ matrix.service }}/datadog.yml
+          spec_file: src/${{ matrix.src }}/datadog.yml
           dd_api_key: ${{ secrets.DD_API_KEY }}
           dd_application_key: ${{ secrets.DD_APPLICATION_KEY }}

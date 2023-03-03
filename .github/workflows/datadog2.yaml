@@ -13,7 +13,7 @@ jobs:
       - name: Get code
         uses: actions/checkout@v3
       - name: List
-        run: ls -lha
+        run: ls -lha .github/workflows
       - name: Service Definition
         uses: ./.github/workflows/reusable.yaml
         with:

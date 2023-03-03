@@ -18,4 +18,4 @@ jobs:
     needs: datadog
     uses: ./.github/workflows/reusable.yaml
     with:
-      service-name: ${{ matrix.service }}
+      service-name: hello-world5

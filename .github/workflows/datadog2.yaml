@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - "dev"
+  workflow_dispatch:
 jobs:
   datadog:
     runs-on: ubuntu-latest

@@ -5,6 +5,7 @@ on:
       serviceName:
         required: true
         type: string
+        default: test
 jobs:
   datadog-service-deinition:
     runs-on: ubuntu-latest

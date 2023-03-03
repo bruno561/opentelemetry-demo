@@ -19,4 +19,4 @@ jobs:
       - name: Service Catalog
         uses: ./.github/workflows/reusable.yaml
         with:
-          serviceName: ${{ matrix.service }}
+          serviceName: hello-world5

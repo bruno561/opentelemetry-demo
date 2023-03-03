@@ -21,6 +21,6 @@ jobs:
     needs: datadog
       # - name: Service Catalog
     uses: bruno561/reusable-workflows/.github/workflows/datadog-service-definition.yml@main
-    secret: inherit
+    secrets: inherit
     with:
       serviceName: hello-world5

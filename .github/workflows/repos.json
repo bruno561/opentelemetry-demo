@@ -1,0 +1,7 @@
+{
+    "default-repo": {
+        "name": "default-repo",
+        "url": "https://github.com/default-repo/default-repo",
+        "provider": "github"
+    }
+}

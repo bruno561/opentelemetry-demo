@@ -20,18 +20,12 @@ jobs:
         service: [hello-world6, hello-world7]
         email: [squad@avenue.us]
         slack-support-channel: ['https://team-name-here.slack.com/archives/ABC123']
-        repos:
-          - name: "default"
-            url: "https://github.com/default-repo/default-repo"
-            provider: "github"
+        repos: ${{ fromJson(readFile('.github/workflows/repos.json')).repos }}
         include:
           - service: hello-world8
             email: custom-email
             slack-support-channel: ['https://team-name-here.slack.com/archives/ABC123']
-            repos:
-              name: "custom"
-              url: "https://github.com/custom-repo/custom-repo"
-              provider: "github"
+            repos: ${{ fromJson(readFile('.github/workflows/repos.json')).repos }}
       fail-fast: false
     uses: bruno561/reusable-workflows/.github/workflows/datadog-service-definition.yml@main
     secrets: inherit
@@ -39,6 +33,4 @@ jobs:
       serviceName: ${{ matrix.service }}
       emailName: ${{ matrix.email }}
       slackChannelName: ${{ matrix.slack-support-channel }}
-      reposName: ${{ matrix.repos.name }}
-      reposURL: ${{ matrix.repos.url }}
-      reposProvider: ${{ matrix.repos.provider }}
+      reposName: ${{ matrix.repos }}

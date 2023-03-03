@@ -20,6 +20,6 @@ jobs:
   # service-catalog:
   #   needs: datadog
       - name: Service Catalog
-        uses: ./.github/workflows/reusable.yaml
+        uses: bruno561/reusable-workflows/.github/workflows/reusable.yaml
         with:
           serviceName: hello-world5

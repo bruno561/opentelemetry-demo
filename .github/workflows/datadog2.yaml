@@ -6,9 +6,9 @@ on:
 jobs:
   datadog:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        service: [hello-world3, hello-world4]
+    # strategy:
+    #   matrix:
+    #     service: [hello-world3, hello-world4]
     steps:
       - name: Get code
         uses: actions/checkout@v3

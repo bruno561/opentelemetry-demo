@@ -4,11 +4,6 @@
         "name": "hello-world (primary service repo)",
         "url": "https://github.com/fake-org/hello-world",
         "provider": "github"
-      },
-      {
-        "name": "second-repo",
-        "url": "https://github.com/fake-org/second-repo",
-        "provider": "github"
       }
     ]
   }

@@ -30,6 +30,10 @@ jobs:
         include:
           - service: hello-world8
             email: custom-email
+            repos: 
+              - name: custom-repo
+                url: https://github.com/custom-repo/custom-repo
+                provider: github
       fail-fast: false
     uses: bruno561/reusable-workflows/.github/workflows/datadog-service-definition.yml@main
     secrets: inherit

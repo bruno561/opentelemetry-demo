@@ -16,9 +16,12 @@ jobs:
       #   run: ls -lha .github/workflows
   service-catalog:
     needs: datadog
+
+
     strategy:
       matrix:
         service: [hello-world6, hello-world7]
+        e-mail: [default-email]
         include:
           - service: hello-world8
             email: hello-world8

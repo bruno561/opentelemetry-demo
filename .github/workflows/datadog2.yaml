@@ -6,9 +6,6 @@ on:
 jobs:
   datadog:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        service: [hello-world3, hello-world4]
     steps:
       - name: Get code
         uses: actions/checkout@v3
@@ -19,6 +16,9 @@ jobs:
       #   run: ls -lha .github/workflows
   service-catalog:
     needs: datadog
+    strategy:
+      matrix:
+        service: [hello-world3, hello-world4]
       # - name: Service Catalog
     uses: bruno561/reusable-workflows/.github/workflows/datadog-service-definition.yml@main
     secrets: inherit

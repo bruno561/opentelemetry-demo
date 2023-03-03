@@ -27,12 +27,12 @@ jobs:
         service: [hello-world6, hello-world7]
         email: [squad@avenue.us]
         slack-support-channel: ['https://team-name-here.slack.com/archives/ABC123']
-        repos: ${{ fromJson('.github/workflows/repos.json').repos }}
+        repos: ${{ fromJson('.github/workflows/repos.json') }}
         include:
           - service: hello-world8
             email: custom-email
             slack-support-channel: ['https://team-name-here.slack.com/archives/ABC123']
-            repos: ${{ fromJson('.github/workflows/repos.json').repos }}
+            repos: ${{ fromJson('.github/workflows/repos.json') }}
       fail-fast: false
     uses: bruno561/reusable-workflows/.github/workflows/datadog-service-definition.yml@main
     secrets: inherit

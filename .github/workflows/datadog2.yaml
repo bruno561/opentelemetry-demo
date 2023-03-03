@@ -17,6 +17,7 @@ jobs:
           ref: 'dev'
       - id: set-matrix
         run: |
+          ls -lha
           JSON=$(cat ./repos.json)
           echo "::set-output name=matrix::${JSON//'%'/'%25'}"
   service-catalog:

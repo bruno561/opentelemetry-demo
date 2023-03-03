@@ -2,7 +2,7 @@ name: Delete Service Definition
 on:
   push:
     branches:
-      - "dev"
+      - "x"
   workflow_dispatch:
 jobs:
   datadog:

@@ -2,7 +2,7 @@ name: Deployment
 on:
   push:
     branches:
-      - "dev"
+      - "x"
 jobs:
   datadog:
     runs-on: ubuntu-latest

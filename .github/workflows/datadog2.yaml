@@ -20,8 +20,8 @@ jobs:
       matrix:
         service: [hello-world6, hello-world7]
         include:
-          - email: hello-world6
-      # - name: Service Catalog
+          - service: hello-world8
+            email: hello-world8
     uses: bruno561/reusable-workflows/.github/workflows/datadog-service-definition.yml@main
     secrets: inherit
     with:

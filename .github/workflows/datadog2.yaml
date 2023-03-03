@@ -28,6 +28,10 @@ jobs:
           - service: hello-world8
             email: custom-email
             slack-support-channel: ['https://team-name-here.slack.com/archives/ABC123']
+            repos:
+            - name: "custom"
+              url: "https://github.com/custom-repo/custom-repo"
+              provider: "github"
       fail-fast: false
     uses: bruno561/reusable-workflows/.github/workflows/datadog-service-definition.yml@main
     secrets: inherit

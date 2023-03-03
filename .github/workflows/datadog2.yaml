@@ -13,13 +13,6 @@ jobs:
         with:
           repository: bruno561/opentelemetry-demo
           ref: 'dev'
-      - name: Read file and set output
-        id: read_file
-        run: |
-          echo "::set-output name=file_content::$(cat path/to/file.txt)"
-      - name: Use output variable
-        run: |
-          echo "File contents: ${{ steps.read_file.outputs.file_content }}"
   service-catalog:
     needs: datadog
     strategy:
@@ -35,4 +28,4 @@ jobs:
       serviceName: ${{ matrix.service }}
       emailName: ${{ matrix.email }}
       slackChannelName: ${{ matrix.slack-support-channel }}
-      reposName: ${{ toJson(matrix.repos) }}
+      reposName: ${{ matrix.repos }}

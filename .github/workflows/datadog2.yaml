@@ -30,6 +30,7 @@ jobs:
         include:
           - service: hello-world8
             email: custom-email
+      fail-fast: false
     uses: bruno561/reusable-workflows/.github/workflows/datadog-service-definition.yml@main
     secrets: inherit
     with:

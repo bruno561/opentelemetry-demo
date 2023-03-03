@@ -19,7 +19,7 @@ jobs:
         run: |
           ls -lha
           JSON=$(cat .github/workflows/repos.json)
-          echo "matrix=${JSON//'%'/'%25'}" >> $GITHUB_OUTPUT
+          echo "{matrix}={${JSON//'%'/'%25'}}" >> $GITHUB_OUTPUT
   service-catalog:
     needs: datadog
     strategy:

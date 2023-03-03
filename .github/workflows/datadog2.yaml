@@ -26,4 +26,4 @@ jobs:
     secrets: inherit
     with:
       serviceName: ${{ matrix.service }}
-      # email: ${{ matrix.email }}
+      emailName: ${{ matrix.email }}

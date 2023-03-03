@@ -21,7 +21,7 @@ jobs:
     strategy:
       matrix:
         service: [hello-world6, hello-world7]
-        e-mail: [default-email]
+        email: [default-email]
         include:
           - service: hello-world8
             email: hello-world8

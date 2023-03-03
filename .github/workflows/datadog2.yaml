@@ -18,7 +18,9 @@ jobs:
     needs: datadog
     strategy:
       matrix:
-        service: [hello-world3, hello-world4]
+        service: [hello-world6, hello-world7]
+        include:
+          - email: hello-world6
       # - name: Service Catalog
     uses: bruno561/reusable-workflows/.github/workflows/datadog-service-definition.yml@main
     secrets: inherit

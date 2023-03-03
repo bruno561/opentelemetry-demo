@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
-        uses: actions/download-artifact@v3
+        uses: actions/checkout@v3
       - name: Service Definition
         uses: arcxp/datadog-service-catalog-metadata-provider@v1.0.4
         with:

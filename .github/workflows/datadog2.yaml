@@ -24,7 +24,7 @@ jobs:
         email: [default-email]
         include:
           - service: hello-world8
-            email: hello-world8
+            email: custom-email
     uses: bruno561/reusable-workflows/.github/workflows/datadog-service-definition.yml@main
     secrets: inherit
     with:

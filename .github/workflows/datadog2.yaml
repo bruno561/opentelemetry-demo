@@ -7,19 +7,12 @@ on:
 jobs:
   datadog:
     runs-on: ubuntu-latest
-    outputs:
-      matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
       - name: Get code
         uses: actions/checkout@v3
         with:
           repository: bruno561/opentelemetry-demo
           ref: 'dev'
-      - id: set-matrix
-        run: |
-          ls -lha
-          JSON=$(cat .github/workflows/repos.json)
-          echo "{matrix}={${JSON//'%'/'%25'}}" >> $GITHUB_OUTPUT
   service-catalog:
     needs: datadog
     strategy:
@@ -27,6 +20,10 @@ jobs:
         service: [hello-world6, hello-world7]
         email: [squad@avenue.us]
         slack-support-channel: ['https://team-name-here.slack.com/archives/ABC123']
+        repos:
+          name: "default"
+          url: "https://github.com/default-repo/default-repo"
+          provider: "github"
         include:
           - service: hello-world8
             email: custom-email
@@ -41,4 +38,4 @@ jobs:
       serviceName: ${{ matrix.service }}
       emailName: ${{ matrix.email }}
       slackChannelName: ${{ matrix.slack-support-channel }}
-      reposName: ${{ fromJson(needs.datadog.outputs.matrix) }}
+      reposName: ${{ matrix.repos }}

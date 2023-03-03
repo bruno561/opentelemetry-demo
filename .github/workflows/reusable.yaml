@@ -13,7 +13,7 @@ jobs:
           datadog-hostname: api.us5.datadoghq.com
           datadog-key: ${{ secrets.DATADOG_API_KEY }}
           datadog-app-key: ${{ secrets.DATADOG_APPLICATION_KEY }}
-          service-name: ${{ matrix.service }}
+          service-name: hello-world5
           team: squad
           email: global.greetings@fake-email-host.com
           slack-support-channel: 'https://team-name-here.slack.com/archives/ABC123'

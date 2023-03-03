@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v3
+      - name: List
+        run: ls -lha
       - name: Service Definition
         uses: ./.github/workflows/reusable.yaml
         with:

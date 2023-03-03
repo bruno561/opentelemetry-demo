@@ -14,8 +14,8 @@ jobs:
         uses: actions/checkout@v3
       - name: List
         run: ls -lha .github/workflows
-  service-catalog:
-    needs: datadog
-    uses: ./.github/workflows/reusable.yaml
-    with:
-      serviceName: hello-world5
+  # service-catalog:
+  #   needs: datadog
+        uses: ./.github/workflows/reusable.yaml
+        with:
+          serviceName: ${{ matrix.service }}

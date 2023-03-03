@@ -16,6 +16,7 @@ jobs:
         run: ls -lha .github/workflows
   # service-catalog:
   #   needs: datadog
+      - name: Service Catalog
         uses: ./.github/workflows/reusable.yaml
         with:
           serviceName: ${{ matrix.service }}

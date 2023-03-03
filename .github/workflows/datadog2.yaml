@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v3
+        with:
+          ref: 'dev'
       - name: List
         run: ls -lha .github/workflows
   # service-catalog:

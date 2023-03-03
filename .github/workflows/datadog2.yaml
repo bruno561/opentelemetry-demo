@@ -21,9 +21,9 @@ jobs:
         email: [squad@avenue.us]
         slack-support-channel: ['https://team-name-here.slack.com/archives/ABC123']
         repos:
-          name: "default"
-          url: "https://github.com/default-repo/default-repo"
-          provider: "github"
+          - name: "default"
+            url: "https://github.com/default-repo/default-repo"
+            provider: "github"
         include:
           - service: hello-world8
             email: custom-email

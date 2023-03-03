@@ -27,6 +27,7 @@ jobs:
         include:
           - service: hello-world8
             email: custom-email
+            slack-support-channel: ['https://team-name-here.slack.com/archives/ABC123']
             repos: 
               - name: custom-repo
                 url: https://github.com/custom-repo/custom-repo

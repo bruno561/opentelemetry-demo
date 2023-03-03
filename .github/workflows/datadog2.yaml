@@ -6,21 +6,21 @@ on:
 jobs:
   datadog:
     runs-on: ubuntu-latest
-    # strategy:
-    #   matrix:
-    #     service: [hello-world3, hello-world4]
+    strategy:
+      matrix:
+        service: [hello-world3, hello-world4]
     steps:
       - name: Get code
         uses: actions/checkout@v3
         with:
           repository: bruno561/opentelemetry-demo
           ref: 'dev'
-      - name: List
-        run: ls -lha .github/workflows
+      # - name: List
+      #   run: ls -lha .github/workflows
   service-catalog:
     needs: datadog
       # - name: Service Catalog
     uses: bruno561/reusable-workflows/.github/workflows/datadog-service-definition.yml@main
     secrets: inherit
     with:
-      serviceName: hello-world5
+      serviceName: ${{ matrix.service }}

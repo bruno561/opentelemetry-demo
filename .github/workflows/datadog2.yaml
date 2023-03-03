@@ -17,9 +17,9 @@ jobs:
           ref: 'dev'
       - name: List
         run: ls -lha .github/workflows
-  # service-catalog:
-  #   needs: datadog
-      - name: Service Catalog
-        uses: bruno561/reusable-workflows/.github/workflows/reusable.yaml@main
-        with:
-          serviceName: hello-world5
+  service-catalog:
+    needs: datadog
+      # - name: Service Catalog
+    uses: bruno561/reusable-workflows/.github/workflows/reusable.yaml@main
+    with:
+      serviceName: hello-world5

@@ -21,8 +21,10 @@ jobs:
         squad: [squad-name]
         email: [squad@avenue.us]
         slack-support-channel: ['https://team-name-here.slack.com/archives/ABC123']
-        repos:
-          - { name: [repo-test1, repo-test-2], url: [repo-test1, repo-test-2], type: [repo-test1, repo-test-2] }
+        repos: [
+          { name: repo-test1, url: url-test1, type: provider-test1 },
+          { name: repo-test2, url: url-test2, type: provider-test2 }
+        ]
         tags:
           - name: name1
             value: value1

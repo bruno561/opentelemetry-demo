@@ -21,7 +21,7 @@ jobs:
         squad: [squad-name]
         email: [squad@avenue.us]
         slack-support-channel: ['https://team-name-here.slack.com/archives/ABC123']
-        tags: [tag1, tags2]
+        tags: [tag1:tags2]
       fail-fast: false
     uses: bruno561/reusable-workflows/.github/workflows/datadog-service-definition.yml@main
     secrets: inherit

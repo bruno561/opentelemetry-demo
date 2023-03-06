@@ -21,12 +21,12 @@ jobs:
         squad: [squad-name]
         email: [squad@avenue.us]
         slack-support-channel: ['https://team-name-here.slack.com/archives/ABC123']
-        repos: [{name: repo-test2, url: url-test2, provider: null}, {name: repo-test2, url: url-test2, provider: null}]
-        tags:
-          - name: name1
-            value: value1
-          - name: name2
-            value: value2
+        repos: [{name: primeiro-repo, url: http://www.site1.com, provider: GitHub}, {name: segundo-repo, url: ttp://www.site2.com, provider: GitHub}]
+        # tags:
+        #   - name: name1
+        #     value: value1
+        #   - name: name2
+        #     value: value2
       fail-fast: false
     uses: bruno561/reusable-workflows/.github/workflows/datadog-service-definition.yml@main
     secrets: inherit
@@ -39,6 +39,6 @@ jobs:
       reposName: ${{ matrix.repos.name }}
       reposURL: ${{ matrix.repos.url }}
       reposProvider: ${{ matrix.repos.provider }}
-      tagsName: "${{ matrix.tags.name }}: ${{ matrix.tags.value }}"
+      # tagsName: "${{ matrix.tags.name }}: ${{ matrix.tags.value }}"
 
 

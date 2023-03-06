@@ -21,7 +21,6 @@ jobs:
         squad: [value]
         email: [squad@avenue.us]
         slack-support-channel: ['https://team-name-here.slack.com/archives/ABC123']
-        repos: ${{ fromJson('.github/workflows/repos.json') }}
       fail-fast: false
     uses: bruno561/reusable-workflows/.github/workflows/datadog-service-definition.yml@main
     secrets: inherit
@@ -29,4 +28,4 @@ jobs:
       serviceName: ${{ matrix.service }}
       emailName: ${{ matrix.email }}
       slackChannelName: ${{ matrix.slack-support-channel }}
-      squadName: ${{ matrix.value }}
+      squadName: ${{ matrix.squad }}

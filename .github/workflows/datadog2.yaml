@@ -21,7 +21,7 @@ jobs:
         squad: [squad-name]
         email: [squad@avenue.us]
         slack-support-channel: ['https://team-name-here.slack.com/archives/ABC123']
-        repos: [{name: primeiro-repo, url: http://www.site1.com, provider: GitHub}, {name: segundo-repo, url: ttp://www.site2.com, provider: GitHub}]
+        repos: [{name: primeiro-repo, url: http://www.site1.com, provider: GitHub}, {name: segundo-repo, url: http://www.site2.com, provider: GitHub}]
         # tags:
         #   - name: name1
         #     value: value1

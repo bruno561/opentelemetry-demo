@@ -41,7 +41,8 @@ jobs:
       emailName: ${{ matrix.email }}
       slackChannelName: ${{ matrix.slack-support-channel }}
       squadName: ${{ matrix.squad }}
-      reposName: ${{ matrix.repos.name }}
-      reposURL: ${{ matrix.repos.url }}
-      reposProvider: ${{ matrix.repos.provider }}
+      reposMatrix: ${{ toJson(matrix.repos) }}
+      # reposName: ${{ matrix.repos.name }}
+      # reposURL: ${{ matrix.repos.url }}
+      # reposProvider: ${{ matrix.repos.provider }}
       tagsName: "${{ matrix.tags.name }}: ${{ matrix.tags.value }}"

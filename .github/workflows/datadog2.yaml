@@ -23,8 +23,11 @@ jobs:
         slack-support-channel: ['https://team-name-here.slack.com/archives/ABC123']
         repos:
            - { name: "repo-test", url: "url-test", provider: "provider-test" }
-        tags: 
-          - [ "tags1:tags2", "tags3:tags4" ]
+        tags:
+          - name: name1
+            value: value1
+          - name: name2
+            value: value2
       fail-fast: false
     uses: bruno561/reusable-workflows/.github/workflows/datadog-service-definition.yml@main
     secrets: inherit
@@ -36,4 +39,4 @@ jobs:
       reposName: ${{ matrix.repos.name }}
       reposURL: ${{ matrix.repos.url }}
       reposProvider: ${{ matrix.repos.provider }}
-      tagsName: ${{ matrix.tags }}
+      tagsName: "${{ matrix.tags.name }}: ${{ matrix.tags.value }}"

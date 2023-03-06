@@ -18,7 +18,7 @@ jobs:
     strategy:
       matrix:
         service: [hello-world6, hello-world7]
-        squad: [value]
+        squad: [squad-name]
         email: [squad@avenue.us]
         slack-support-channel: ['https://team-name-here.slack.com/archives/ABC123']
       fail-fast: false

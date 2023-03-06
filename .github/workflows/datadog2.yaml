@@ -24,7 +24,7 @@ jobs:
         repos:
            - { name: "repo-test", url: "url-test", provider: "provider-test" }
         tags: 
-          - { "tags1:tags2", "tags3:tags4" }
+          - [ "tags1:tags2", "tags3:tags4" ]
       fail-fast: false
     uses: bruno561/reusable-workflows/.github/workflows/datadog-service-definition.yml@main
     secrets: inherit

@@ -18,6 +18,7 @@ jobs:
     strategy:
       matrix:
         service: [hello-world6, hello-world7]
+        squad: [value]
         email: [squad@avenue.us]
         slack-support-channel: ['https://team-name-here.slack.com/archives/ABC123']
         repos: ${{ fromJson('.github/workflows/repos.json') }}
@@ -28,4 +29,4 @@ jobs:
       serviceName: ${{ matrix.service }}
       emailName: ${{ matrix.email }}
       slackChannelName: ${{ matrix.slack-support-channel }}
-      reposName: ${{ matrix.repos }}
+      squadName: ${{ matrix.value }}

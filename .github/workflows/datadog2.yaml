@@ -21,10 +21,7 @@ jobs:
         squad: [squad-name]
         email: [squad@avenue.us]
         slack-support-channel: ['https://team-name-here.slack.com/archives/ABC123']
-        repos: [
-          { name: repo-test1, url: url-test1, type: GitHub },
-          { name: repo-test2, url: url-test2, type: GitHub }
-        ]
+        repos: [{name: repo-test2, url: url-test2, provider: null}, {name: repo-test2, url: url-test2, provider: null}]
         tags:
           - name: name1
             value: value1
@@ -44,4 +41,4 @@ jobs:
       reposProvider: ${{ matrix.repos.provider }}
       tagsName: "${{ matrix.tags.name }}: ${{ matrix.tags.value }}"
 
-      
+

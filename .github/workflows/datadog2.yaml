@@ -41,7 +41,7 @@ jobs:
       emailName: ${{ matrix.email }}
       slackChannelName: ${{ matrix.slack-support-channel }}
       squadName: ${{ matrix.squad }}
-      reposMatrix: ${{ matrix.repos }}
+      reposMatrix: ${{ matrix.repos.name }} ${{ matrix.repo.url }} ${{ matrix.repo.provider }}
       # reposName: ${{ matrix.repos.name }}
       # reposURL: ${{ matrix.repos.url }}
       # reposProvider: ${{ matrix.repos.provider }}

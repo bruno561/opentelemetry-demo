@@ -37,7 +37,7 @@ jobs:
           - name: reponame
             url: https://github.com
             provider: github
-        tags: [name: key, value: value]
+        tags: [key:value]
       fail-fast: false
     uses: bruno561/reusable-workflows/.github/workflows/datadog-service-definition.yml@main
     secrets: inherit
@@ -59,6 +59,6 @@ jobs:
       reposName: ${{ matrix.repos.name }}
       reposURL: ${{ matrix.repos.url }}
       reposProvider: ${{ matrix.repos.provider }}
-      tagsName: "${{ matrix.tags.name }}: ${{ matrix.tags.value }}"
+      tagsName: ${{ matrix.tags }}
 
 

@@ -30,9 +30,45 @@ jobs:
             url: https://grafana.com
             type: dashboard
         repos: 
-          - url: https://github.com
+          - name: reponame
+            url: https://github.com
             provider: github
         tags: [{tag1: "key:value", tag2: "key:value2"}]
+        include:
+          - service: [sevice2]
+            squad: [squad1]
+            email: [squad@company.com]
+            slack-support-channel: ['https://team-name-here.slack.com/archives/ABC123']
+            docs:
+              - name: doc1
+                url: https://www.atlassian.com/br/software/confluence
+                provider: Confluence
+            links:
+              - name: grafana
+                url: https://grafana.com
+                type: dashboard
+            repos: 
+              - name: reponame
+                url: https://github.com
+                provider: github
+            tags: [{tag1: "key:value", tag2: "key:value2"}]
+          - service: [sevice3]
+            squad: [squad1]
+            email: [squad@company.com]
+            slack-support-channel: ['https://team-name-here.slack.com/archives/ABC123']
+            docs:
+              - name: doc1
+                url: https://www.atlassian.com/br/software/confluence
+                provider: Confluence
+            links:
+              - name: grafana
+                url: https://grafana.com
+                type: dashboard
+            repos: 
+              - name: reponame
+                url: https://github.com
+                provider: github
+            tags: [{tag1: "key:value", tag2: "key:value2"}]
       fail-fast: false
     uses: bruno561/reusable-workflows/.github/workflows/datadog-service-definition.yml@main
     secrets: inherit
@@ -51,7 +87,7 @@ jobs:
       linkUrl: ${{ matrix.links.url }}
       linkType: ${{ matrix.links.type }}
       # reposMatrix: ${{ matrix.repos.name }} ${{ matrix.repo.url }} ${{ matrix.repo.provider }}
-      # reposName: ${{ matrix.repos.name }}
+      reposName: ${{ matrix.repos.name }}
       reposURL: ${{ matrix.repos.url }}
       reposProvider: ${{ matrix.repos.provider }}
       tagName1: ${{ matrix.tags.tag1 }}

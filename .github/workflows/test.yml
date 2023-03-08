@@ -37,7 +37,9 @@ jobs:
           - name: reponame
             url: https://github.com
             provider: github
-        tags: [["key:tag", "key1:tag1"]]
+        tags:
+          - key:value
+          - key1:value1
       fail-fast: false
     uses: bruno561/reusable-workflows/.github/workflows/datadog-service-definition.yml@main
     secrets: inherit

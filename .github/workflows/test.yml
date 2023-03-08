@@ -38,7 +38,7 @@ jobs:
             url: https://github.com
             provider: github
         tags: [
-          {"key:value", "key2:value2"}
+          {key: "value", key2: "value2"},
         ]
       fail-fast: false
     uses: bruno561/reusable-workflows/.github/workflows/datadog-service-definition.yml@main
@@ -61,6 +61,6 @@ jobs:
       reposName: ${{ matrix.repos.name }}
       reposURL: ${{ matrix.repos.url }}
       reposProvider: ${{ matrix.repos.provider }}
-      tagsName: ${{ matrix.tags }}
-
+      tagsKey: ${{ matrix.tags.key }}
+      tagsKey2: ${{ matrix.tags.key2 }}
 

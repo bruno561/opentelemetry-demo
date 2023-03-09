@@ -43,7 +43,7 @@ jobs:
             # contacts: {name: "contact3", type: "email", value: "test"} 
             docs: {url: "https://www.atlassian.com/br/software/confluence"} 
             links: {url: "https://grafana.com"}
-            repos: {name: "reponame3"}
+            # repos: {name: "reponame3"}
             tags: {tag1: "key:value3", tag2: "key:value3"}
       fail-fast: false
     uses: bruno561/reusable-workflows/.github/workflows/datadog-service-definition.yml@main
@@ -63,9 +63,8 @@ jobs:
       linkUrl: ${{ matrix.links.url }}
       # linkType: ${{ matrix.links.type }}
       # reposMatrix: ${{ matrix.repos.name }} ${{ matrix.repo.url }} ${{ matrix.repo.provider }}
-      reposName: ${{ matrix.repos.name }}
+      # reposName: ${{ matrix.repos.name }}
       # reposURL: ${{ matrix.repos.url }}
       # reposProvider: ${{ matrix.repos.provider }}
       tagName1: ${{ matrix.tags.tag1 }}
       tagName2: ${{ matrix.tags.tag2 }}
-      

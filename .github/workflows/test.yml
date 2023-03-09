@@ -69,9 +69,9 @@ jobs:
                 type: email
                 value: test
             docs:
-              - { name: doc3,
+              - {name: doc3,
                   url: https://www.atlassian.com/br/software/confluence,
-                  provider: Confluence }
+                  provider: Confluence}
             links:
               - name: grafana
                 url: https://grafana.com

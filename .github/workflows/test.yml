@@ -25,7 +25,10 @@ jobs:
         docs: [{url: "https://www.atlassian.com/br/software/confluence"}]
         links: [{url: "https://grafana.com"}]
         # repos: [{name: "reponame1"}]
-        tags: [['{tag: "key1:value1"}, {tag: "key2:value2"}, {tag: "key3:value3"}']]
+        tags: [
+          {tag: "key1:value1"}, 
+          {tag: "key2:value2"}
+        ]
         # include:
         #   - service: service2
         #     squad: squad2

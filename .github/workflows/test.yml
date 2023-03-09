@@ -39,7 +39,7 @@ jobs:
     secrets: inherit
     with:
       serviceName: ${{ matrix.service }}
-      # emailName: ${{ matrix.email }}
+      emailName: ${{ matrix.email }}
       slackChannelName: ${{ matrix.slack-support-channel }}
       squadName: ${{ matrix.squad }}
       docUrl: ${{ matrix.docs.url }}

@@ -19,7 +19,7 @@ jobs:
       matrix:
         service: [service1]
         squad: [squad1]
-        # email: [squad@company.com]
+        email: [squad@company.com]
         slack-support-channel: ['https://team-name-here.slack.com/archives/ABC123']
         # contacts: [{name: "contact1", type: "email", value: "test"}]
         docs: [{url: "https://www.atlassian.com/br/software/confluence"}]
@@ -32,7 +32,7 @@ jobs:
         include:
           - service: service2
             squad: squad2
-            # email: squad@company.com
+            email: squad@company.com
             slack-support-channel: 'https://team-name-here.slack.com/archives/ABC123'
             # contacts: {name: "contact2", type: "email", value: "test"} 
             docs: {url: "https://www.atlassian.com/br/software/confluence"} 
@@ -44,7 +44,7 @@ jobs:
             ]
           - service: service3
             squad: squad3
-            # email: squad@company.com
+            email: squad@company.com
             # slack-support-channel: 'https://team-name-here.slack.com/archives/ABC123'
             # contacts: {name: "contact3", type: "email", value: "test"} 
             docs: {url: "https://www.atlassian.com/br/software/confluence"} 
@@ -75,5 +75,5 @@ jobs:
       # reposName: ${{ matrix.repos.name }}
       # reposURL: ${{ matrix.repos.url }}
       # reposProvider: ${{ matrix.repos.provider }}
-      tagName1: ${{ matrix.tags }}
+      tagName1: ${{ matrix.tags[0] }}
       # tagName2: ${{ matrix.tags.tag2 }}

@@ -22,9 +22,7 @@ jobs:
         email: [squad@company.com]
         slack-support-channel: ['https://team-name-here.slack.com/archives/ABC123']
         contacts: [
-            {name: contact1},
-            {type: email},
-            {value: test}
+            {name: contact1, type: email, value: test},
         ]
         docs:
           - name: doc1

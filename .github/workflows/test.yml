@@ -21,63 +21,29 @@ jobs:
         squad: [squad1]
         email: [squad@company.com]
         slack-support-channel: ['https://team-name-here.slack.com/archives/ABC123']
-        contacts: 
-          - [{name: [contact1, contact2], type: [email1, email2], value: [test1, test2]}]
-        docs:
-          - name: doc1
-            url: https://www.atlassian.com/br/software/confluence
-            provider: Confluence
-        links:
-          - name: grafana
-            url: https://grafana.com
-            type: dashboard
-        repos: 
-          - name: reponame
-            url: https://github.com
-            provider: github
+        contacts: [{name: contact1, type: email1, value: test1}]
+        docs: [{name: doc1, url: https://www.atlassian.com/br/software/confluence, provider: Confluence}]
+        links: [{name: grafana, url: https://grafana.com, type: dashboard}]
+        repos: [{name: reponame, url: https://github.com, provider: github}]
         tags: [{tag1: "key:value", tag2: "key:value2"}]
         include:
           - service: sevice2
             squad: squad2
             email: squad@company.com
             slack-support-channel: 'https://team-name-here.slack.com/archives/ABC123'
-            contacts:
-              - name: contact2
-                type: email
-                value: test
-            docs:
-              - name: doc2
-                url: https://www.atlassian.com/br/software/confluence
-                provider: Confluence
-            links:
-              - name: grafana
-                url: https://grafana.com
-                type: dashboard
-            repos: 
-              - name: reponame
-                url: https://github.com
-                provider: github
+            contacts: {name: contact2, type: email, value: test}
+            docs: {name: doc2, url: https://www.atlassian.com/br/software/confluence, provider: Confluence}
+            links: {name: grafana, url: https://grafana.com, type: dashboard}
+            repos: {name: reponame, url: https://github.com, provider: github }
             tags: {tag1: "key:value", tag2: "key:value2"}
           - service: sevice3
             squad: squad3
             email: squad@company.com
             slack-support-channel: 'https://team-name-here.slack.com/archives/ABC123'
-            contacts:
-              - name: contact3
-                type: email
-                value: test
-            docs:
-              - name: doc3
-                url: https://www.atlassian.com/br/software/confluence
-                provider: Confluence
-            links:
-              - name: grafana
-                url: https://grafana.com
-                type: dashboard
-            repos: 
-              - name: reponame
-                url: https://github.com
-                provider: github
+            contacts: {name: contact3, type: email, value: test}
+            docs: {name: doc3, url: https://www.atlassian.com/br/software/confluence, provider: Confluence}
+            links: {name: grafana, url: https://grafana.com, type: dashboard}
+            repos: {name: reponame, url: https://github.com, provider: github }
             tags: {tag1: "key:value", tag2: "key:value2"}
       fail-fast: false
     uses: bruno561/reusable-workflows/.github/workflows/datadog-service-definition.yml@main

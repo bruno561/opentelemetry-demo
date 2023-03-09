@@ -26,8 +26,8 @@ jobs:
         links: [{url: "https://grafana.com"}]
         # repos: [{name: "reponame1"}]
         tags: [
-          {tag: "key1:value1"}, 
-          {tag: "key2:value2"}
+          [{tag: "key1:value1"},
+          {tag: "key2:value2"}]
         ]
         # include:
         #   - service: service2

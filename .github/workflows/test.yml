@@ -39,8 +39,8 @@ jobs:
             provider: github
         tags: [{tag1: "key:value", tag2: "key:value2"}]
         include:
-          - service: [sevice2]
-          - service: [sevice3]
+          - service: sevice2
+          - service: sevice3
       fail-fast: false
     uses: bruno561/reusable-workflows/.github/workflows/datadog-service-definition.yml@main
     secrets: inherit

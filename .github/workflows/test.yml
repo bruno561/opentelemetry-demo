@@ -68,3 +68,4 @@ jobs:
       reposProvider: ${{ matrix.repos.provider }}
       tagName1: ${{ matrix.tags.tag1 }}
       tagName2: ${{ matrix.tags.tag2 }}
+      

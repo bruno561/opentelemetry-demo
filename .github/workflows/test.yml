@@ -70,8 +70,8 @@ jobs:
                 value: test
             docs:
               - {name: doc3,
-                  url: https://www.atlassian.com/br/software/confluence,
-                  provider: Confluence}
+                url: https://www.atlassian.com/br/software/confluence,
+                provider: Confluence}
             links:
               - name: grafana
                 url: https://grafana.com

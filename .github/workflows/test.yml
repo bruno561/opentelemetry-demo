@@ -24,8 +24,10 @@ jobs:
         # contacts: [{name: "contact1", type: "email", value: "test"}]
         docs: [{url: "https://www.atlassian.com/br/software/confluence"}]
         links: [{url: "https://grafana.com"}]
-        repos: [{name: "reponame1"}]
-        tags: [{tag1: "key:value1", tag2: "key:value1"}]
+        # repos: [{name: "reponame1"}]
+        tags:
+          - "key:value1"
+          - "key:value2"
         include:
           - service: service2
             squad: squad2
@@ -34,8 +36,10 @@ jobs:
             # contacts: {name: "contact2", type: "email", value: "test"} 
             docs: {url: "https://www.atlassian.com/br/software/confluence"} 
             links: {url: "https://grafana.com"}
-            repos: {name: "reponame2"}
-            tags: {tag1: "key:value2", tag2: "key:value2"}
+            # repos: {name: "reponame2"}
+            tags:
+              - "key:value1"
+              - "key:value2"
           - service: service3
             squad: squad3
             email: squad@company.com
@@ -44,7 +48,9 @@ jobs:
             docs: {url: "https://www.atlassian.com/br/software/confluence"} 
             links: {url: "https://grafana.com"}
             # repos: {name: "reponame3"}
-            tags: {tag1: "key:value3", tag2: "key:value3"}
+            tags:
+              - "key:value1"
+              - "key:value2"
       fail-fast: false
     uses: bruno561/reusable-workflows/.github/workflows/datadog-service-definition.yml@main
     secrets: inherit
@@ -66,5 +72,5 @@ jobs:
       # reposName: ${{ matrix.repos.name }}
       # reposURL: ${{ matrix.repos.url }}
       # reposProvider: ${{ matrix.repos.provider }}
-      tagName1: ${{ matrix.tags.tag1 }}
-      tagName2: ${{ matrix.tags.tag2 }}
+      tagName1: ${{ matrix.tags }}
+      # tagName2: ${{ matrix.tags.tag2 }}

@@ -25,9 +25,10 @@ jobs:
         docs: [{url: "https://www.atlassian.com/br/software/confluence"}]
         links: [{url: "https://grafana.com"}]
         # repos: [{name: "reponame1"}]
-        tags:
-          - "key:value1"
-          - "key:value2"
+        tags: [
+              {"key:value1"},
+              {"key:value2"}
+            ]
         include:
           - service: service2
             squad: squad2
@@ -37,9 +38,10 @@ jobs:
             docs: {url: "https://www.atlassian.com/br/software/confluence"} 
             links: {url: "https://grafana.com"}
             # repos: {name: "reponame2"}
-            tags:
-              - "key:value1"
-              - "key:value2"
+            tags: [
+              {"key:value1"},
+              {"key:value2"}
+            ]
           - service: service3
             squad: squad3
             email: squad@company.com
@@ -48,9 +50,10 @@ jobs:
             docs: {url: "https://www.atlassian.com/br/software/confluence"} 
             links: {url: "https://grafana.com"}
             # repos: {name: "reponame3"}
-            tags:
-              - "key:value1"
-              - "key:value2"
+            tags: [
+              {"key:value1"},
+              {"key:value2"}
+            ]
       fail-fast: false
     uses: bruno561/reusable-workflows/.github/workflows/datadog-service-definition.yml@main
     secrets: inherit

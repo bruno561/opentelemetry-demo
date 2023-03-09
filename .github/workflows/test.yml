@@ -44,5 +44,5 @@ jobs:
       squadName: ${{ matrix.squad }}
       docUrl: ${{ matrix.docs.url }}
       linkUrl: ${{ matrix.links.url }}
-      tagName1: ${{ matrix.tags.* }}
+      tagName1: ${{ matrix.tags.tag[*] }}
 

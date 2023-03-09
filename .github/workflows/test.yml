@@ -40,9 +40,9 @@ jobs:
         tags: [{tag1: "key:value", tag2: "key:value2"}]
         include:
           - service: sevice2
-            squad: [squad2]
-            email: [squad@company.com]
-            slack-support-channel: ['https://team-name-here.slack.com/archives/ABC123']
+            squad: squad2
+            email: squad@company.com
+            slack-support-channel: 'https://team-name-here.slack.com/archives/ABC123'
             contacts:
               - name: contact2
                 type: email
@@ -59,11 +59,11 @@ jobs:
               - name: reponame
                 url: https://github.com
                 provider: github
-            tags: [{tag1: "key:value", tag2: "key:value2"}]
+            tags: {tag1: "key:value", tag2: "key:value2"}
           - service: sevice3
-            squad: [squad3]
-            email: [squad@company.com]
-            slack-support-channel: ['https://team-name-here.slack.com/archives/ABC123']
+            squad: squad3
+            email: squad@company.com
+            slack-support-channel: 'https://team-name-here.slack.com/archives/ABC123'
             contacts:
               - name: contact3
                 type: email
@@ -80,7 +80,7 @@ jobs:
               - name: reponame
                 url: https://github.com
                 provider: github
-            tags: [{tag1: "key:value", tag2: "key:value2"}]
+            tags: {tag1: "key:value", tag2: "key:value2"}
       fail-fast: false
     uses: bruno561/reusable-workflows/.github/workflows/datadog-service-definition.yml@main
     secrets: inherit

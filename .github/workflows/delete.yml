@@ -2,7 +2,7 @@ name: Delete Service Definition
 on:
   push:
     branches:
-      - "x"
+      - "dev"
   workflow_dispatch:
     inputs:
       DD_API_KEY:

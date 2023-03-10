@@ -5,30 +5,23 @@ on:
       - "dev"
   workflow_dispatch:
     inputs:
-      DD_API_KEY:
-        description: 'Datadog API Key'
-        required: true
-        default: ''
-      DD_APPLICATION_KEY:
-        description: 'Datadog Application Key'
-        required: true
-        default: ''
       service_name:
         description: 'The name of the service to delete'
         required: true
-        default: 'service1'
 jobs:
-  delete:
+  datadog:
     runs-on: ubuntu-latest
     steps:
       - name: Get code
         uses: actions/checkout@v3
+        with:
+          repository: bruno561/opentelemetry-demo
+          ref: 'dev'
+  datadog-service:
+    needs: datadog
+    steps:
       - name: Delete Service Definition
-        run: |
-          # Path parameters
-          export service_name="${{ inputs.service_name }}"
-          # Curl command
-          curl -X DELETE "https://us5.datadoghq.com/api/v2/services/definitions/${{ inputs.service_name }}" \
-          -H "Accept: application/json" \
-          -H "DD-API-KEY: ${{ inputs.DD_API_KEY }}" \
-          -H "DD-APPLICATION-KEY: ${{ inputs.DD_APPLICATION_KEY }}"
+        uses: bruno561/reusable-workflows/.github/workflows/delete-service-definition.yml@main
+        with:
+          secrets: inherit
+          service_name: "${{ inputs.service_name }}"

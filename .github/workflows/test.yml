@@ -17,7 +17,7 @@ jobs:
     needs: datadog
     strategy:
       matrix:
-        service: [service1]
+        # service: [service1]
         squad: [squad1]
         email: [squad@company.com]
         slack-support-channel: ['https://team-name-here.slack.com/archives/ABC123']

@@ -1,21 +1,30 @@
 name: Delete Service Definition
 on:
-  push:
-    branches:
-      - "x"
   workflow_dispatch:
-jobs:
-  datadog:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Get code
-        uses: actions/checkout@v3
-      - name: Delete Service Definition
-        run: |
-          # Path parameters
-          export service_name="featureflagsservice"
-          # Curl command
-          curl -X DELETE "https://us5.datadoghq.com/api/v2/services/definitions/featureflagsservice" \
-          -H "Accept: application/json" \
-          -H "DD-API-KEY: ${DD_API_KEY}" \
-          -H "DD-APPLICATION-KEY: ${DD_APPLICATION_KEY}"
+    inputs:
+      DD_API_KEY:
+        description: 'Datadog API Key'
+        required: true
+        default: ''
+      DD_APPLICATION_KEY:
+        description: 'Datadog Application Key'
+        required: true
+        default: ''
+      service_name:
+        description: 'The name of the service to delete'
+        required: true
+    jobs:
+      delete:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Get code
+            uses: actions/checkout@v3
+          - name: Delete Service Definition
+            run: |
+              # Path parameters
+              export service_name="${{ inputs.service_name }}"
+              # Curl command
+              curl -X DELETE "https://us5.datadoghq.com/api/v2/services/definitions/featureflagsservice" \
+              -H "Accept: application/json" \
+              -H "DD-API-KEY: ${{ inputs.DD_API_KEY }}" \
+              -H "DD-APPLICATION-KEY: ${{ inputs.DD_APPLICATION_KEY }}"

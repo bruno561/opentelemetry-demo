@@ -19,9 +19,7 @@ jobs:
           ref: 'dev'
   datadog-service:
     needs: datadog
-    steps:
-      - name: Delete Service Definition
-        uses: bruno561/reusable-workflows/.github/workflows/delete-service-definition.yml@main
-        secrets: inherit
-        with:
-          service_name: "${{ inputs.service_name }}"
+    uses: bruno561/reusable-workflows/.github/workflows/delete-service-definition.yml@main
+    secrets: inherit
+    with:
+      service_name: "${{ inputs.service_name }}"

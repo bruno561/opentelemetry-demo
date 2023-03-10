@@ -17,7 +17,7 @@ jobs:
     needs: datadog
     strategy:
       matrix:
-        service: []
+        # service: [service1]
         squad: [squad1]
         email: [squad@company.com]
         slack-support-channel: ['https://team-name-here.slack.com/archives/ABC123']
@@ -38,7 +38,7 @@ jobs:
     uses: bruno561/reusable-workflows/.github/workflows/datadog-service-definition.yml@main
     secrets: inherit
     with:
-      serviceName: ${{ matrix.service }}
+      # serviceName: ${{ matrix.service }}
       emailName: ${{ matrix.email }}
       slackChannelName: ${{ matrix.slack-support-channel }}
       squadName: ${{ matrix.squad }}

@@ -24,3 +24,4 @@ jobs:
         uses: bruno561/reusable-workflows/.github/workflows/delete-service-definition.yml@main
         with:
           service_name: "${{ inputs.service_name }}"
+          secrets: inherit

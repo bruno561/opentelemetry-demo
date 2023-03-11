@@ -20,4 +20,5 @@ jobs:
     secrets: inherit
     with:
       service_name: "${{ inputs.service_name }}"
-      
+      DD_API_KEY: ${{ secrets.DD_API_KEY }}
+      DD_APPLICATION_KEY: ${{ secrets.DD_APPLICATION_KEY }} 

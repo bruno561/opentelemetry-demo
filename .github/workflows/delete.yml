@@ -11,14 +11,16 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v3
+  datadog-service:
+    runs-on: ubuntu-latest
+    needs: datadog
+    steps:
       - name: Set environment variables
         env:
           DD_API_KEY: ${{ secrets.DD_API_KEY }}
           DD_APPLICATION_KEY: ${{ secrets.DD_APPLICATION_KEY }}
         run: echo "Environment variables set"
-  datadog-service:
-    needs: datadog
-    uses: bruno561/reusable-workflows/.github/workflows/delete-service-definition.yml@main
-    secrets: inherit
-    with:
-      service_name: "${{ inputs.service_name }}"
+      - name: Call reusable workflow
+        uses: bruno561/reusable-workflows/.github/workflows/delete-service-definition.yml@main
+        with:
+          service_name: "${{ inputs.service_name }}"

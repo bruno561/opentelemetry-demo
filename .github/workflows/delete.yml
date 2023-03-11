@@ -1,5 +1,8 @@
 name: Delete Service Definition
 on:
+  push:
+    branches:
+      - "dev"
   workflow_dispatch:
     inputs:
       service_name:

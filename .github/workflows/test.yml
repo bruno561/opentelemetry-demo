@@ -2,7 +2,7 @@ name: Create Service Definition Datadog
 on:
   push:
     branches:
-      - "dev"
+      - "test"
   workflow_dispatch:
 jobs:
   datadog:

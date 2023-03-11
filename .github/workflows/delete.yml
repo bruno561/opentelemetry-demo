@@ -11,9 +11,11 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v3
-        with:
-          repository: bruno561/opentelemetry-demo
-          ref: 'dev'
+      - name: Set environment variables
+        env:
+          DD_API_KEY: ${{ secrets.DD_API_KEY }}
+          DD_APPLICATION_KEY: ${{ secrets.DD_APPLICATION_KEY }}
+        run: echo "Environment variables set"
   datadog-service:
     needs: datadog
     uses: bruno561/reusable-workflows/.github/workflows/delete-service-definition.yml@main

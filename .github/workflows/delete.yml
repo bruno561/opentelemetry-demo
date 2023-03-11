@@ -8,6 +8,11 @@ on:
       service_name:
         description: 'The name of the service to delete'
         required: true
+    secrets:
+      DD-API-KEY:
+        required: true
+      DD-APPLICATION-KEY: 
+        required: true
 jobs:
   datadog:
     runs-on: ubuntu-latest

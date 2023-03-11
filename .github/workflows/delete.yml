@@ -9,10 +9,14 @@ on:
         description: 'The name of the service to delete'
         required: true
 jobs:
-  datadog-service:
+  get-code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+  delete-dd-service-definition:
     needs: datadog
     uses: bruno561/reusable-workflows/.github/workflows/delete-service-definition.yml@main
     secrets: inherit
     with:
       service_name: "${{ inputs.service_name }}"
-      

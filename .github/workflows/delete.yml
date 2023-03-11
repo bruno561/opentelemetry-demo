@@ -8,9 +8,6 @@ on:
 jobs:
   datadog:
     runs-on: ubuntu-latest
-    env:
-      DD_API_KEY: ${{ secrets.DD_API_KEY }}
-      DD_APPLICATION_KEY: ${{ secrets.DD_APPLICATION_KEY }}
     steps:
       - name: Get code
         uses: actions/checkout@v3

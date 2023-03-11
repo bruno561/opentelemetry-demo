@@ -15,7 +15,7 @@ jobs:
       - name: Get code
         uses: actions/checkout@v3
   delete-service-definition:
-    needs: datadog
+    needs: get-code
     uses: bruno561/reusable-workflows/.github/workflows/delete-service-definition.yml@main
     secrets: inherit
     with:

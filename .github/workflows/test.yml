@@ -10,9 +10,6 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v3
-        with:
-          repository: bruno561/opentelemetry-demo
-          ref: 'dev'
   service-catalog:
     needs: datadog
     strategy:

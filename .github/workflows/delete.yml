@@ -14,9 +14,8 @@ jobs:
   datadog-service:
     needs: datadog
     uses: bruno561/reusable-workflows/.github/workflows/delete-service-definition.yml@main
+    secrets: inherit
     with:
       service_name: "${{ inputs.service_name }}"
-    secrets: 
-      DD_API_KEY: ${{ secrets.DD_API_KEY }}
-      DD_APPLICATION_KEY: ${{ secrets.DD_APPLICATION_KEY }}
 
+      

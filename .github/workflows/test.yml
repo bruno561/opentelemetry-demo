@@ -39,5 +39,5 @@ jobs:
       squadName: ${{ matrix.squad }}
       docUrl: ${{ matrix.docs.url }}
       grafanaUrl: ${{ matrix.links.url }}
-      # tagName1: ${{ matrix.tags.tag1 }}
-      # tagName2: ${{ matrix.tags.tag2 }}
+      tagName1: ${{ matrix.tags.tag1 }}
+      tagName2: ${{ matrix.tags.tag2 }}

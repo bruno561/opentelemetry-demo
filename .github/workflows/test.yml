@@ -10,7 +10,7 @@ jobs:
       matrix:
         service: [cross-mfaservice]
         squad: [cross]
-        email: [squad@company.com]
+        email: [cross@company.com]
         slack-channel: ['https://team-name-here.slack.com/archives/ABC123']
         docs: [{url: "https://www.atlassian.com/br/software/confluence"}]
         links: [{url: "https://grafana.com"}]

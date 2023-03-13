@@ -2,7 +2,7 @@ name: Delete Service Definition
 on:
   workflow_dispatch:
     inputs:
-      service_name:
+      serviceName:
         description: 'The name of the service to delete'
         required: true
 jobs:
@@ -16,4 +16,4 @@ jobs:
     uses: bruno561/reusable-workflows/.github/workflows/delete-service-definition.yml@main
     secrets: inherit
     with:
-      service_name: "${{ inputs.service_name }}"
+      serviceName: "${{ inputs.serviceName }}"

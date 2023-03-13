@@ -3,24 +3,24 @@ on:
   push:
     branches:
       - "dev"
-  workflow_dispatch:
+  # workflow_dispatch:
 jobs:
-  datadog:
+  get-code:
     runs-on: ubuntu-latest
     steps:
       - name: Get code
         uses: actions/checkout@v3
-  service-catalog:
-    needs: datadog
+  create-service-definition:
+    needs: get-code
     strategy:
       matrix:
-        service: [service1]
-        squad: [squad1]
+        service: [cross-mfaservice]
+        squad: [cross]
         email: [squad@company.com]
         slack-support-channel: ['https://team-name-here.slack.com/archives/ABC123']
         docs: [{url: "https://www.atlassian.com/br/software/confluence"}]
         links: [{url: "https://grafana.com"}]
-        tags: [{tag1: "key1:value1"}]
+        # tags: [{tag: "key1:value1"}, {tag: "key2:value2"}]
         # include:
         #   - service: service2
         #     squad: squad2
@@ -30,7 +30,7 @@ jobs:
         #     docs: {url: "https://www.atlassian.com/br/software/confluence"} 
         #     links: {url: "https://grafana.com"}
         #     # repos: {name: "reponame2"}
-        #     tags: [{tag: "key1:value1"}, {tag: "key2:value2"}, {tag: "key3:value3"}]
+        #     tags: {tag: "key1:value1"}, {tag: "key2:value2"}
       fail-fast: false
     uses: bruno561/reusable-workflows/.github/workflows/datadog-service-definition.yml@main
     secrets: inherit
@@ -41,5 +41,5 @@ jobs:
       squadName: ${{ matrix.squad }}
       docUrl: ${{ matrix.docs.url }}
       grafanaUrl: ${{ matrix.links.url }}
-      tagName1: ${{ matrix.tags.tag1 }}
+      # tagName1: ${{ matrix.tags.tag1 }}
       # tagName2: ${{ matrix.tags.tag2 }}

@@ -21,14 +21,14 @@ jobs:
         docs: [{url: "https://www.atlassian.com/br/software/confluence"}]
         links: [{url: "https://grafana.com"}]
         tags: [{tag1: "key1:value1"}, {tag2: "key2:value2"}]
-        include:
-          - service: cross-mfaservice2
-            squad: cross
-            email: squad@company.com
-            slack-support-channel: 'https://team-name-here.slack.com/archives/ABC123'
-            docs: {url: "https://www.atlassian.com/br/software/confluence"} 
-            links: {url: "https://grafana.com"}
-            tags: [{tag1: "key1:value1"}, {tag2: "key2:value2"}]
+        # include:
+        #   - service: cross-mfaservice2
+        #     squad: cross
+        #     email: squad@company.com
+        #     slack-support-channel: 'https://team-name-here.slack.com/archives/ABC123'
+        #     docs: {url: "https://www.atlassian.com/br/software/confluence"} 
+        #     links: {url: "https://grafana.com"}
+        #     tags: [{tag1: "key1:value1"}, {tag2: "key2:value2"}]
       fail-fast: false
     uses: bruno561/reusable-workflows/.github/workflows/datadog-service-definition.yml@main
     secrets: inherit

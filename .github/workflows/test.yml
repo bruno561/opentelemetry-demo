@@ -12,17 +12,9 @@ jobs:
         squad: [squad]
         email: [squad@company.com]
         slack-channel: ['https://team-name-here.slack.com/archives/ABC123']
-        docs: [{url: "https://www.atlassian.com/br/software/confluence"}]
+        docs: ["https://www.atlassian.com/br/software/confluence"]
         links: [{url: "https://grafana.com"}]
         tags: [{tag1: "app:loadgenerator", tag2: "key2:value2"}]
-        include:
-          - service: cross-mfaservice2
-            squad: cross
-            email: squad@company.com
-            slack-channel: 'https://team-name-here.slack.com/archives/ABC123'
-            docs: {url: "https://www.atlassian.com/br/software/confluence"} 
-            links: {url: "https://grafana.com"}
-            # tags: {tag1: "key1:value1", tag2: "key2:value2"}
       fail-fast: false
     uses: bruno561/reusable-workflows/.github/workflows/datadog-service-definition.yml@main
     secrets: inherit
@@ -31,7 +23,7 @@ jobs:
       emailName: ${{ matrix.email }}
       slackChannelName: ${{ matrix.slack-channel }}
       squadName: ${{ matrix.squad }}
-      docUrl: ${{ matrix.docs.url }}
+      docUrl: ${{ matrix.docs }}
       grafanaUrl: ${{ matrix.links.url }}
       # tagName1: ${{ matrix.tags.tag1 }}
       # tagName2: ${{ matrix.tags.tag2 }}

@@ -10,7 +10,7 @@ jobs:
       contents: read
     strategy:
       matrix:
-        service: [loadgenerator]
+        service: [bruno]
         squad: [squad]
         email: [squad@company.com]
         slack-channel: ['https://team-name-here.slack.com/archives/ABC123']

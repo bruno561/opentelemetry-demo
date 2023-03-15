@@ -3,30 +3,30 @@ on:
   push:
     branches:
       - "dev"
-  # workflow_dispatch:
+  workflow_dispatch:
 jobs:
   create-service-definition:
     permissions:
       contents: read
     strategy:
       matrix:
-        service: [bruno]
+        service: [joao]
         squad: [squad]
-        email: [squad@company.com]
-        slack-channel: ['https://team-name-here.slack.com/archives/ABC123']
-        docs: ["https://www.atlassian.com/br/software/confluence"]
-        links: [{url: "https://grafana.com"}]
-        tags: [{tag1: "app:loadgenerator", tag2: "key2:value2"}]
+        email: [squad@xpto.com]
+        slack-channel: ["https://avenuesec.slack.com/archives/00123456789"]
+        docs: ["https://xpto.atlassian.net/wiki/spaces/XPTO/pages/0123456789/Squad"]
+        links: ["https://grafana.com/xpto"]
+        tags: [{tag1: "key1:value1", tag2: "key2:value2"}]
       fail-fast: false
     uses: bruno561/reusable-workflows/.github/workflows/datadog-service-definition.yml@main
     secrets: inherit
     with:
       serviceName: ${{ matrix.service }}
+      squadName: ${{ matrix.squad }}
       emailName: ${{ matrix.email }}
       slackChannelName: ${{ matrix.slack-channel }}
-      squadName: ${{ matrix.squad }}
       docUrl: ${{ matrix.docs }}
-      grafanaUrl: ${{ matrix.links.url }}
-      # tagName1: ${{ matrix.tags.tag1 }}
-      # tagName2: ${{ matrix.tags.tag2 }}
+      grafanaUrl: ${{ matrix.links }}
+      tagName1: ${{ matrix.tags.tag1 }}
+      tagName2: ${{ matrix.tags.tag2 }}
 

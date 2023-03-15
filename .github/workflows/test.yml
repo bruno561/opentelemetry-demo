@@ -6,6 +6,8 @@ on:
   # workflow_dispatch:
 jobs:
   create-service-definition:
+    permissions:
+      contents: read
     strategy:
       matrix:
         service: [loadgenerator]

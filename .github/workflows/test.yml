@@ -12,7 +12,7 @@ jobs:
       matrix:
         service: [joao]
         squad: [squad]
-        email: [squad@xpto.com]
+        # email: [squad@xpto.com]
         slack-channel: ["https://avenuesec.slack.com/archives/00123456789"]
         docs: ["https://xpto.atlassian.net/wiki/spaces/XPTO/pages/0123456789/Squad"]
         links: ["https://grafana.com/xpto"]
@@ -23,7 +23,7 @@ jobs:
     with:
       serviceName: ${{ matrix.service }}
       squadName: ${{ matrix.squad }}
-      emailName: ${{ matrix.email }}
+      # emailName: ${{ matrix.email }}
       slackChannelName: ${{ matrix.slack-channel }}
       docUrl: ${{ matrix.docs }}
       grafanaUrl: ${{ matrix.links }}
